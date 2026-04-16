@@ -1,18 +1,37 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
+import { createPool } from "mysql2/promise";
 import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
+let _pool: ReturnType<typeof createPool> | null = null;
 
 // Lazily create the drizzle instance so local tooling can run without a DB.
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
-      _db = drizzle(process.env.DATABASE_URL);
+      const sslEnabled = (process.env.DATABASE_SSL ?? "").toLowerCase();
+      const ssl =
+        sslEnabled === "1" || sslEnabled === "true" || sslEnabled === "required"
+          ? {
+              rejectUnauthorized: (process.env.DATABASE_SSL_REJECT_UNAUTHORIZED ?? "true").toLowerCase() !== "false",
+              ca: process.env.DATABASE_SSL_CA?.replace(/\\n/g, "\n"),
+            }
+          : undefined;
+
+      _pool = createPool({
+        uri: process.env.DATABASE_URL,
+        ssl,
+        connectionLimit: Number(process.env.DATABASE_POOL_LIMIT ?? 10),
+      });
+
+      // TypeScript (pnpm) can see multiple mysql2 Pool types; runtime is OK.
+      _db = drizzle(_pool as any) as any;
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
       _db = null;
+      _pool = null;
     }
   }
   return _db;

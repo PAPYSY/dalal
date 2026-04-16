@@ -28,7 +28,7 @@ npx -y pnpm@10.4.1 run build
 
 - **Secrets**: `JWT_SECRET` obligatoire (le serveur refuse de démarrer si absent).
 - **Origines autorisées**: définir `APP_ALLOWED_ORIGINS` en prod (ex: `https://dalal.app`).
-- **Base de données**: définir `DATABASE_URL` si vous activez les features communauté.
+- **Base de données**: définir `DATABASE_URL` si vous activez les features communauté. Pour une BD cloud, activer aussi `DATABASE_SSL=true` (souvent requis).
 - **Clés publiques**: ne jamais exposer de clé “secrète” dans des variables `VITE_*`.
 
 ### Déploiement sur Vercel

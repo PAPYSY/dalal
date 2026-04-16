@@ -16,6 +16,10 @@ const envSchema = z.object({
 
   // DB (required if you run migrations / community features)
   DATABASE_URL: z.string().optional(),
+  DATABASE_SSL: z.string().optional(),
+  DATABASE_SSL_REJECT_UNAUTHORIZED: z.string().optional(),
+  DATABASE_SSL_CA: z.string().optional(),
+  DATABASE_POOL_LIMIT: z.string().optional(),
 
   // Optional: restrict allowed browser origins for state-changing requests
   // Comma-separated list like: "https://dalal.app,https://www.dalal.app"
