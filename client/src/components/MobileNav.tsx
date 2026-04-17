@@ -1,16 +1,11 @@
-/**
- * Navigation Mobile - Menu Hamburger
- * Réutilisable dans toutes les pages
- */
-
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, useLocation } from 'wouter';
-import { Menu, X, Heart, Wind, Palette, BookOpen, Users, AlertCircle, BarChart3, Compass, Phone } from 'lucide-react';
+import { Menu, X, Heart, Wind, Palette, BookOpen, Users, AlertCircle, BarChart3, Compass, Phone, Home } from 'lucide-react';
 import Logo from './Logo';
 
 const NAV_ITEMS = [
-  { href: '/', label: 'Accueil', icon: Heart },
+  { href: '/', label: 'Accueil', icon: Home },
   { href: '/expression', label: 'Expression', icon: Heart },
   { href: '/exercices', label: 'Exercices', icon: Wind },
   { href: '/creatif', label: 'Atelier Créatif', icon: Palette },
@@ -25,124 +20,151 @@ const NAV_ITEMS = [
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
-  const prefersReducedMotion = useReducedMotion();
   const dialogId = useId();
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
 
-  // Close menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  useEffect(() => { setIsOpen(false); }, [location]);
 
-  // Close on ESC
   useEffect(() => {
     if (!isOpen) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsOpen(false);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setIsOpen(false); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
   }, [isOpen]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
-  // Move focus into the dialog when opening
   useEffect(() => {
-    if (!isOpen) return;
-    closeBtnRef.current?.focus();
+    if (isOpen) closeBtnRef.current?.focus();
   }, [isOpen]);
+
+  const menu = isOpen ? createPortal(
+    <>
+      {/* Overlay — rendu sur body, échappe le stacking context du header */}
+      <div
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+        style={{
+          position: 'fixed', inset: 0,
+          zIndex: 9998,
+          backgroundColor: 'rgba(0,0,0,0.72)',
+        }}
+      />
+
+      {/* Panneau */}
+      <div
+        id={dialogId}
+        role="dialog"
+        aria-modal="true"
+        style={{
+          position: 'fixed',
+          top: 0, right: 0, bottom: 0,
+          width: 'min(320px, calc(100vw - 16px))',
+          zIndex: 9999,
+          backgroundColor: '#2D4A43',
+          display: 'flex',
+          flexDirection: 'column',
+          boxShadow: '-8px 0 40px rgba(0,0,0,0.5)',
+          overflowY: 'auto',
+        }}
+      >
+        {/* En-tête */}
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: '16px 20px', flexShrink: 0,
+          borderBottom: '1px solid rgba(255,255,255,0.12)',
+        }}>
+          <Logo size="sm" />
+          <button
+            ref={closeBtnRef}
+            onClick={() => setIsOpen(false)}
+            aria-label="Fermer le menu"
+            style={{
+              padding: '8px', borderRadius: '10px', border: 'none', cursor: 'pointer',
+              backgroundColor: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center',
+            }}
+          >
+            <X style={{ width: 20, height: 20, color: '#FFFFFF' }} />
+          </button>
+        </div>
+
+        {/* Navigation */}
+        <nav style={{ padding: '12px 16px', flex: 1, overflowY: 'auto' }}>
+          {NAV_ITEMS.map(item => {
+            const Icon = item.icon;
+            const isActive = location === item.href;
+
+            const bg = item.urgent
+              ? 'rgba(196,184,212,0.2)'
+              : isActive
+              ? 'rgba(255,255,255,0.18)'
+              : 'rgba(255,255,255,0.07)';
+
+            const border = item.urgent
+              ? '1.5px solid rgba(196,184,212,0.55)'
+              : isActive
+              ? '1.5px solid rgba(255,255,255,0.28)'
+              : '1.5px solid transparent';
+
+            const color = item.urgent ? '#D4C4E8' : '#FFFFFF';
+            const iconColor = item.urgent ? '#C4B8D4' : isActive ? '#B8CBBF' : 'rgba(255,255,255,0.7)';
+
+            return (
+              <Link key={item.href} href={item.href}>
+                <div style={{
+                  display: 'flex', alignItems: 'center', gap: '14px',
+                  padding: '13px 16px', marginBottom: '6px',
+                  borderRadius: '14px',
+                  backgroundColor: bg,
+                  border,
+                  cursor: 'pointer',
+                }}>
+                  <Icon style={{ width: 21, height: 21, color: iconColor, flexShrink: 0 }} />
+                  <span style={{
+                    fontSize: '16px',
+                    fontWeight: isActive ? 600 : 400,
+                    color,
+                    fontFamily: "'Source Sans 3', sans-serif",
+                  }}>
+                    {item.label}
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Pied */}
+        <div style={{
+          padding: '14px 20px', flexShrink: 0,
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+        }}>
+          <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', textAlign: 'center' }}>
+            Dalal — Calme-toi. Tu es en sécurité.
+          </p>
+        </div>
+      </div>
+    </>,
+    document.body
+  ) : null;
 
   return (
     <>
-      {/* Hamburger Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 rounded-xl hover:bg-green-light/20 transition"
-        aria-label="Menu"
+        onClick={() => setIsOpen(true)}
+        className="md:hidden"
+        style={{ padding: '8px', borderRadius: '12px', background: 'transparent', border: 'none', cursor: 'pointer' }}
+        aria-label="Ouvrir le menu"
         aria-expanded={isOpen}
         aria-controls={dialogId}
       >
-        {isOpen ? <X className="w-6 h-6 text-text-main" /> : <Menu className="w-6 h-6 text-text-main" />}
+        <Menu style={{ width: 26, height: 26, color: '#2A2A2A' }} />
       </button>
 
-      {/* Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div
-              className="fixed inset-0 bg-black/30 z-40 md:hidden"
-              onClick={() => setIsOpen(false)}
-              initial={prefersReducedMotion ? false : { opacity: 0 }}
-              animate={prefersReducedMotion ? undefined : { opacity: 1 }}
-              exit={prefersReducedMotion ? undefined : { opacity: 0 }}
-              aria-hidden="true"
-            />
-
-            <motion.div
-              id={dialogId}
-              role="dialog"
-              aria-modal="true"
-              className="fixed top-0 right-0 h-full w-72 bg-bg-main z-50 md:hidden"
-              style={{ boxShadow: '-4px 0 20px rgba(0,0,0,0.1)' }}
-              initial={prefersReducedMotion ? false : { x: 32, opacity: 0 }}
-              animate={prefersReducedMotion ? undefined : { x: 0, opacity: 1 }}
-              exit={prefersReducedMotion ? undefined : { x: 32, opacity: 0 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] as const }}
-            >
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-8">
-                  <Logo size="sm" />
-                  <button
-                    ref={closeBtnRef}
-                    onClick={() => setIsOpen(false)}
-                    className="p-2 rounded-xl hover:bg-green-light/20 transition"
-                    aria-label="Fermer le menu"
-                  >
-                    <X className="w-5 h-5 text-text-main" />
-                  </button>
-                </div>
-
-                <nav className="space-y-1">
-                  {NAV_ITEMS.map(item => {
-                    const Icon = item.icon;
-                    const isActive = location === item.href;
-                    return (
-                      <Link key={item.href} href={item.href}>
-                        <span
-                          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition cursor-pointer ${
-                            item.urgent
-                              ? 'bg-lavender/10 text-text-main hover:bg-lavender/20 border border-lavender/30'
-                              : isActive
-                              ? 'bg-green-deep/10 text-green-deep font-semibold'
-                              : 'text-text-main hover:bg-green-light/10'
-                          }`}
-                        >
-                          <Icon className="w-5 h-5 flex-shrink-0" />
-                          <span className="text-sm">{item.label}</span>
-                        </span>
-                      </Link>
-                    );
-                  })}
-                </nav>
-
-                <div className="mt-8 p-4 rounded-xl bg-green-light/10 border border-green-light/20">
-                  <p className="text-xs text-text-muted text-center">
-                    Dalal — Calme-toi. Tu es en sécurité.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+      {menu}
     </>
   );
 }

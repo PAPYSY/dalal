@@ -88,7 +88,7 @@ export default function Exercices() {
     <div className="bg-bg-main">
       <div className="container py-12">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
             Exercices Psychologiques Guidés
           </h1>
           <p className="text-lg text-text-muted">

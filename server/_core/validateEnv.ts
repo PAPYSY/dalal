@@ -10,9 +10,9 @@ const envSchema = z.object({
   // Auth/session
   JWT_SECRET: strongSecret,
 
-  // OAuth + app
-  VITE_APP_ID: nonEmpty,
-  OAUTH_SERVER_URL: nonEmpty,
+  // OAuth + app (optional — not required for anonymous-first deployment)
+  VITE_APP_ID: z.string().optional(),
+  OAUTH_SERVER_URL: z.string().optional(),
 
   // DB (required if you run migrations / community features)
   DATABASE_URL: z.string().optional(),

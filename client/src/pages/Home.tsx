@@ -44,12 +44,12 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-bg-main/30 to-bg-main/70 z-10" />
 
-        <div className="container relative z-20 py-20 md:py-32">
+        <div className="container relative z-20 py-14 sm:py-20 md:py-28 lg:py-32">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-text-main mb-6" style={{ fontFamily: "'Lora', serif" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-main mb-4 md:mb-6" style={{ fontFamily: "'Lora', serif" }}>
               Calme-toi.<br />Tu es en sécurité.
             </h1>
-            <p className="text-lg md:text-xl text-text-muted mb-8 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-text-muted mb-6 md:mb-8 leading-relaxed">
               Dalal est un espace anonyme, gratuit et bienveillant pour exprimer ce que tu ressens, trouver des outils pour aller mieux, et être guidé vers un vrai soutien.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -71,11 +71,11 @@ export default function Home() {
       {/* Modules Section */}
       <section className="dalal-section bg-bg-main">
         <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-16 dalal-heading">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 lg:mb-16 dalal-heading">
             Explore les espaces de Dalal
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {MODULES.map(mod => {
               const Icon = mod.icon;
               return (
@@ -120,7 +120,7 @@ export default function Home() {
       {/* Values Section */}
       <section className="dalal-section bg-bg-card">
         <div className="container max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 dalal-heading">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10 lg:mb-12 dalal-heading">
             Les principes de Dalal
           </h2>
           <div className="space-y-8">

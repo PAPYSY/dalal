@@ -87,7 +87,7 @@ export default function Communaute() {
 
       <div className="container py-12 max-w-2xl mx-auto">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
             Communauté
           </h1>
           <p className="text-lg text-text-muted">

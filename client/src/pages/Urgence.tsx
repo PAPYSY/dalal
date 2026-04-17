@@ -102,10 +102,10 @@ export default function Urgence() {
       </header>
 
       {/* Main Content */}
-      <div className="container py-12">
+      <div className="container py-8 md:py-12">
         {/* Title */}
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
             Tu n'es pas seul(e)
           </h1>
           <p className="text-lg text-text-muted">
@@ -115,8 +115,8 @@ export default function Urgence() {
 
         {/* Breathing Exercise */}
         {breathingActive && (
-          <div className="max-w-md mx-auto mb-16 text-center">
-            <div className="dalal-card p-12 bg-lavender/10">
+          <div className="max-w-md mx-auto mb-10 md:mb-16 text-center">
+            <div className="dalal-card p-6 sm:p-8 md:p-12 bg-lavender/10">
               <h2 className="text-2xl font-bold text-text-main mb-8" style={{ fontFamily: "'Lora', serif" }}>
                 Respiration Guidée
               </h2>

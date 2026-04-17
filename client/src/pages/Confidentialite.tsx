@@ -6,7 +6,7 @@ export default function Confidentialite() {
     <div className="bg-bg-main">
       <div className="container py-12">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-text-main mb-8" style={{ fontFamily: "'Lora', serif" }}>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-main mb-6 sm:mb-8" style={{ fontFamily: "'Lora', serif" }}>
             Politique de Confidentialité
           </h1>
 

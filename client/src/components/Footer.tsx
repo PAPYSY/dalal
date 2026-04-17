@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-text-main/5 border-t border-green-light/20 py-12">
       <div className="container">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
           <div>
             <Logo size="md" />
             <p className="text-text-muted mt-4 text-sm">
@@ -47,7 +47,7 @@ export default function Footer() {
           <p>
             Dalal © 2026 by{' '}
             <a
-              href="https://www.niaaare-app.com"
+              href="https://niaare-app.com"
               target="_blank"
               rel="noreferrer"
               className="hover:text-green-deep underline underline-offset-4"

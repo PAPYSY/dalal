@@ -78,7 +78,7 @@ export default function Expression() {
       <div className="container py-12">
         <div className="max-w-2xl mx-auto">
           <div className="mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
               Écris ce que tu ressens
             </h1>
             <p className="text-lg text-text-muted">
@@ -91,19 +91,19 @@ export default function Expression() {
             <label className="block text-sm font-semibold text-text-main mb-4">
               Comment te sens-tu en ce moment?
             </label>
-            <div className="grid grid-cols-5 gap-3">
+            <div className="grid grid-cols-5 gap-2 sm:gap-3">
               {MOOD_OPTIONS.map((mood) => (
                 <button
                   key={mood.value}
                   onClick={() => setSelectedMood(mood.value)}
-                  className={`p-4 rounded-2xl transition-all duration-300 ${
+                  className={`p-2 sm:p-4 rounded-2xl transition-all duration-300 ${
                     selectedMood === mood.value
                       ? `${mood.color} ring-2 ring-green-deep scale-110`
                       : `${mood.color} hover:scale-105`
                   }`}
                 >
-                  <div className="text-3xl mb-2">{mood.emoji}</div>
-                  <div className="text-xs font-medium text-text-main">{mood.label}</div>
+                  <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{mood.emoji}</div>
+                  <div className="text-xs font-medium text-text-main leading-tight">{mood.label}</div>
                 </button>
               ))}
             </div>
