@@ -1,5 +1,5 @@
 /**
- * Expression Page - Dalal
+ * Expression Page - Dallaal
  * Espace d'expression anonyme avec Care Engine intégré
  */
 

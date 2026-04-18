@@ -1,5 +1,5 @@
 /**
- * Urgence Page - Dalal
+ * Urgence Page - Dallaal
  * 
  * Design Philosophy: Minimalisme Organique Africain
  * - Fond lavande doux, jamais alarmant
@@ -109,7 +109,7 @@ export default function Urgence() {
             Tu n'es pas seul(e)
           </h1>
           <p className="text-lg text-text-muted">
-            Si tu traverses une crise, il existe une aide réelle. Respire d'abord, puis contacte quelqu'un.
+            La tempête en toi est réelle. Et une aide réelle existe. Respire d'abord. Un souffle, puis un autre.
           </p>
         </div>
 
@@ -211,29 +211,29 @@ export default function Urgence() {
           <div className="space-y-6 mb-12">
             <div className="p-6 rounded-2xl bg-green-light/10 border border-green-light/30">
               <h3 className="font-bold text-text-main mb-3" style={{ fontFamily: "'Lora', serif" }}>
-                Ce que tu dois savoir
+                Ce que tu oublies parfois
               </h3>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li>✓ Ce que tu dis est confidentiel</li>
-                <li>✓ Les professionnels sont formés pour t'écouter</li>
-                <li>✓ Il n'y a pas de jugement</li>
-                <li>✓ Tu peux appeler ou envoyer un message</li>
-                <li>✓ L'aide est gratuite</li>
+                <li>✓ Tes mots sont protégés — personne d'autre ne les entend</li>
+                <li>✓ Ces gens ont choisi d'écouter. C'est leur vocation.</li>
+                <li>✓ Sans jugement, sans comparaison, sans honte</li>
+                <li>✓ Un appel, un message — comme tu veux, quand tu veux</li>
+                <li>✓ Gratuit. Toujours.</li>
               </ul>
             </div>
 
             <div className="p-6 rounded-2xl bg-blue-mist/10 border border-blue-mist/30">
               <h3 className="font-bold text-text-main mb-3" style={{ fontFamily: "'Lora', serif" }}>
-                Si tu n'oses pas appeler
+                Si le téléphone te semble lourd
               </h3>
               <p className="text-sm text-text-muted mb-4">
-                C'est normal d'avoir peur. Voici ce que tu peux faire:
+                Le courage n'est pas l'absence de peur. C'est faire quand même. Mais doucement — à ton rythme:
               </p>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li>• Envoie un message WhatsApp à la place</li>
-                <li>• Demande à quelqu'un de confiance de t'accompagner</li>
-                <li>• Écris d'abord ce que tu veux dire</li>
-                <li>• Rappelle-toi: tu n'es pas seul(e)</li>
+                <li>• Un message WhatsApp, si les mots à voix haute sont trop durs</li>
+                <li>• Demande à quelqu'un de confiance de te tenir la main pendant l'appel</li>
+                <li>• Écris d'abord ce que tu veux dire — puis lis</li>
+                <li>• Rappelle-toi: quelqu'un, quelque part, attend ton appel</li>
               </ul>
             </div>
           </div>

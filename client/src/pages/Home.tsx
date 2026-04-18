@@ -1,22 +1,31 @@
 /**
- * Home Page - Dalal
+ * Home Page - Dallaal
  * Design: Minimalisme Organique Africain
  */
 
 import { Button } from '@/components/ui/button';
 import WelcomeModal from '@/components/WelcomeModal';
 import { Link } from 'wouter';
-import { Heart, Lightbulb, Palette, BookOpen, Users, AlertCircle, Compass, BarChart3, Phone } from 'lucide-react';
+import { Heart, Lightbulb, Palette, BookOpen, Users, AlertCircle, Compass, BarChart3, Phone, Bot, MessagesSquare } from 'lucide-react';
 
 const MODULES = [
-  { href: '/expression', icon: Heart, title: 'Expression', desc: 'Écris ce que tu ressens sans jugement. Ton espace privé, anonyme, toujours là pour toi.', color: 'bg-green-light/30', iconColor: 'text-green-deep' },
-  { href: '/exercices', icon: Lightbulb, title: 'Exercices', desc: 'Respiration guidée, ancrage, gratitude. Des outils simples et efficaces pour te calmer.', color: 'bg-blue-mist/30', iconColor: 'text-blue-slate' },
-  { href: '/creatif', icon: Palette, title: 'Atelier Créatif', desc: "Dessine, écris, exprime-toi. L'art comme voie de guérison et d'expression.", color: 'bg-cream-gold/30', iconColor: 'text-cream-gold' },
-  { href: '/cas-de-vie', icon: Compass, title: 'Cas de Vie', desc: '10 situations spécifiques avec exercices adaptés: dépression, trauma, deuil, addiction...', color: 'bg-green-deep/10', iconColor: 'text-green-deep' },
-  { href: '/bibliotheque', icon: BookOpen, title: 'Ressources', desc: 'Articles, conseils et témoignages pour mieux comprendre ce que tu traverses.', color: 'bg-green-light/30', iconColor: 'text-green-deep' },
-  { href: '/annuaire', icon: Phone, title: 'Annuaire', desc: "Professionnels de santé mentale au Sénégal. Trouve de l'aide près de chez toi.", color: 'bg-blue-mist/30', iconColor: 'text-blue-slate' },
-  { href: '/communaute', icon: Users, title: 'Communauté', desc: "Partage anonymement, écoute les autres. Tu n'es pas seul(e).", color: 'bg-blue-mist/30', iconColor: 'text-blue-slate' },
-  { href: '/suivi', icon: BarChart3, title: 'Mon Suivi', desc: 'Suis ton humeur, ta progression et tes activités au quotidien.', color: 'bg-cream-gold/30', iconColor: 'text-cream-gold' },
+  { href: '/expression', icon: Heart, title: 'Expression', desc: "Les mots qu'on garde en soi finissent par peser. Pose-les ici. Personne ne regarde. Juste toi et le silence qui écoute.", color: 'bg-green-light/30', iconColor: 'text-green-deep' },
+  { href: '/exercices', icon: Lightbulb, title: 'Exercices', desc: "Quand le monde devient trop lourd, reviens dans ton souffle. Un cycle à la fois, ton corps retrouve le chemin du calme.", color: 'bg-blue-mist/30', iconColor: 'text-blue-slate' },
+  { href: '/creatif', icon: Palette, title: 'Atelier Créatif', desc: "Tout ce qui ne peut pas se dire peut peut-être se dessiner, se colorier, s'écrire autrement. L'art connaît des chemins que les mots ignorent.", color: 'bg-cream-gold/30', iconColor: 'text-cream-gold' },
+  { href: '/cas-de-vie', icon: Compass, title: 'Cas de Vie', desc: "Tu n'es pas le premier à traverser ça. D'autres sont passés par là et ont trouvé un chemin. Voici ce qui les a aidés.", color: 'bg-green-deep/10', iconColor: 'text-green-deep' },
+  { href: '/bibliotheque', icon: BookOpen, title: 'Ressources', desc: "Des voix qui ont vécu, des mots qui éclairent. Pour mieux comprendre ce qui se passe en toi — sans te juger.", color: 'bg-green-light/30', iconColor: 'text-green-deep' },
+  { href: '/annuaire', icon: Phone, title: 'Annuaire', desc: "Parfois on a besoin d'une main humaine. Ces personnes sont formées pour tendre la leur — sans condition.", color: 'bg-blue-mist/30', iconColor: 'text-blue-slate' },
+  { href: '/communaute', icon: Users, title: 'Communauté', desc: "Quelque part, quelqu'un traverse la même nuit que toi. Ici, vous pouvez vous reconnaître sans vous connaître.", color: 'bg-blue-mist/30', iconColor: 'text-blue-slate' },
+  { href: '/suivi', icon: BarChart3, title: 'Mon Suivi', desc: "Chaque jour est un pas. Même les petits. Trace ton chemin pour voir jusqu'où tu es déjà arrivé.", color: 'bg-cream-gold/30', iconColor: 'text-cream-gold' },
+  { href: '/ecoute-ia', icon: Bot, title: 'Compagnon IA', desc: "Une présence douce, disponible à toute heure. Dis ce que tu as sur le coeur — sans te presser, sans te juger.", color: 'bg-green-deep/10', iconColor: 'text-green-deep' },
+  { href: '/chat', icon: MessagesSquare, title: 'Chat pair-aidant', desc: "Des salons anonymes pour parler à d'autres qui traversent la même nuit. Vous pouvez vous reconnaître sans vous connaître.", color: 'bg-blue-mist/30', iconColor: 'text-blue-slate' },
+];
+
+const VALUES = [
+  { num: '1', title: 'Anonymat total', desc: "Ici, tu n'as pas de nom. Pas d'identité. Juste ta vérité — protégée, intouchable, entièrement à toi." },
+  { num: '2', title: 'Gratuit et accessible', desc: "Le bien-être ne devrait pas avoir de prix. Dallaal fonctionne même là où le réseau fait défaut — pour tous." },
+  { num: '3', title: "Né d'ici", desc: "Parce que nos douleurs ont nos visages, nos langues, nos silences. Dallaal est né de cette terre." },
+  { num: '4', title: 'Bienveillant et sans jugement', desc: "Pas un oeil qui juge. Pas une voix qui compare. Juste une présence — stable, douce, constante." },
 ];
 
 export default function Home() {
@@ -28,7 +37,7 @@ export default function Home() {
       <div className="bg-lavender/20 border-b border-lavender/30 px-4 py-3">
         <div className="container flex items-center gap-3 text-sm text-text-main">
           <AlertCircle className="w-5 h-5 flex-shrink-0" />
-          <span>En crise? <Link href="/urgence" className="font-semibold underline">Accès immédiat à l'aide</Link></span>
+          <span>La tempête est là? <Link href="/urgence" className="font-semibold underline">De l'aide, maintenant</Link></span>
         </div>
       </div>
 
@@ -50,7 +59,7 @@ export default function Home() {
               Calme-toi.<br />Tu es en sécurité.
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-text-muted mb-6 md:mb-8 leading-relaxed">
-              Dalal est un espace anonyme, gratuit et bienveillant pour exprimer ce que tu ressens, trouver des outils pour aller mieux, et être guidé vers un vrai soutien.
+              Ici, tes mots n'ont pas besoin d'être beaux. Tes larmes n'ont pas besoin d'être expliquées. Dallaal est l'espace où tu arrives tel que tu es — et où quelque chose, doucement, commence à bouger.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/expression">
@@ -72,7 +81,7 @@ export default function Home() {
       <section className="dalal-section bg-bg-main">
         <div className="container">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 lg:mb-16 dalal-heading">
-            Explore les espaces de Dalal
+            Explore les espaces de Dallaal
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -108,7 +117,7 @@ export default function Home() {
                     Espace Urgence
                   </h3>
                   <p className="text-sm text-text-muted">
-                    En crise? Respiration guidée, numéros d'urgence et ressources d'aide immédiate au Sénégal.
+                    Quand ça devient trop lourd pour porter seul(e). Un souffle guidé, une main tendue — tout de suite.
                   </p>
                 </div>
               </div>
@@ -121,15 +130,10 @@ export default function Home() {
       <section className="dalal-section bg-bg-card">
         <div className="container max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10 lg:mb-12 dalal-heading">
-            Les principes de Dalal
+            Les principes de Dallaal
           </h2>
           <div className="space-y-8">
-            {[
-              { num: '1', title: 'Anonymat total', desc: 'Aucun compte requis. Tes données ne quittent jamais ton appareil. Dalal ne sait pas qui tu es.' },
-              { num: '2', title: 'Gratuit et accessible', desc: 'Fonctionne même avec une connexion 2G. Aucun coût, jamais. Pour tous les jeunes.' },
-              { num: '3', title: 'Culturellement adapté', desc: 'Conçu pour la réalité africaine. Pas de stigmatisation. Respect des croyances et traditions.' },
-              { num: '4', title: 'Bienveillant et sans jugement', desc: "Ton espace sûr. Aucune critique. Juste de l'écoute et du soutien." },
-            ].map(v => (
+            {VALUES.map(v => (
               <div key={v.num} className="flex gap-6">
                 <div className="w-12 h-12 rounded-full bg-green-deep/10 flex items-center justify-center flex-shrink-0">
                   <span className="text-green-deep font-bold">{v.num}</span>

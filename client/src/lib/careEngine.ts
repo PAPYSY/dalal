@@ -105,9 +105,9 @@ const KEYWORDS: { word: string; weight: number; category: string }[] = [
 
 const MESSAGES = {
   none: '',
-  low: 'Dalal est là pour toi. N\'hésite pas à explorer nos exercices.',
-  medium: 'Ce que tu ressens est important. Dalal a des outils qui peuvent t\'aider.',
-  high: 'Tu traverses quelque chose de difficile. Tu n\'es pas seul(e). Dalal peut t\'orienter.',
+  low: 'Quelque chose en toi cherche de l\'air. Dallaal a des exercices conçus pour ça — doux, à ton rythme.',
+  medium: 'Ce que tu portes mérite d\'être posé quelque part. Tu n\'as pas à tenir seul(e). Dallaal est là.',
+  high: 'Tu traverses quelque chose de lourd. Tu n\'as pas à traverser ça seul(e). Laisse Dallaal t\'accompagner — un souffle à la fois.',
   critical: 'Tu sembles en grande souffrance. S\'il te plaît, contacte un professionnel ou appelle le +221 33 825 50 22.',
 };
 
@@ -196,6 +196,6 @@ export function evaluatePHQ2(answers: number[]): PHQ2Result {
   const isPositive = score >= 3;
   const message = isPositive
     ? 'Ton score suggère que tu pourrais traverser une période difficile. Ce n\'est pas un diagnostic, mais il serait bon de consulter un professionnel. Tu n\'es pas seul(e).'
-    : 'Ton score est dans la normale. Si tu te sens quand même mal, n\'hésite pas à utiliser les exercices de Dalal ou à consulter un professionnel.';
+    : 'Ton score est dans la normale. Mais si quelque chose pèse encore, les exercices de Dallaal et un professionnel sont là pour toi — sans jugement.';
   return { score, isPositive, message };
 }

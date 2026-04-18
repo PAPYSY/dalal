@@ -57,7 +57,7 @@ export const CAS_DE_VIE: CasDeVie[] = [
         title: 'Lettre à toi-même',
         description: 'Écris-toi une lettre comme si tu parlais à ton meilleur ami qui souffre.',
         steps: [
-          'Prends un papier ou ouvre l\'espace Expression de Dalal',
+          'Prends un papier ou ouvre l\'espace Expression de Dallaal',
           'Commence par "Cher(e) moi..."',
           'Écris ce que tu dirais à un ami qui traverse la même chose',
           'Sois doux/douce avec toi-même dans cette lettre',
@@ -445,11 +445,11 @@ export const CAS_DE_VIE: CasDeVie[] = [
   },
   {
     id: 'goumi',
-    title: 'Goumi — Peine d\'amour',
+    title: 'Peine d\'amour',
     subtitle: 'Le cœur brisé guérit, même s\'il ne le croit pas encore',
     emoji: '💔',
     color: '#C4B8D4',
-    description: 'En wolof, "goumi" décrit cette douleur du cœur brisé. C\'est l\'une des souffrances les plus universelles. Et oui, ça passe. Même si maintenant, ça semble impossible.',
+    description: 'La douleur du cœur brisé est l\'une des souffrances les plus universelles. Et oui, ça passe. Même si maintenant, ça semble impossible.',
     signs: [
       'Douleur physique dans la poitrine',
       'Obsession pour l\'autre personne',

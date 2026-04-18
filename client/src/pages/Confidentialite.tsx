@@ -13,10 +13,10 @@ export default function Confidentialite() {
           <div className="space-y-8">
             <section>
               <h2 className="text-2xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
-                Dalal ne sait pas qui tu es
+                Dallaal ne sait pas qui tu es
               </h2>
               <p className="text-text-muted leading-relaxed">
-                Tout ce que tu écris reste sur ton appareil. Nous ne créons pas de compte. Nous ne collectons pas ton nom. Nous ne vendons rien. Juste un espace pour toi.
+                Tout ce que tu écris reste sur ton appareil — comme un journal qu'on ne peut pas voler. Pas de compte. Pas de nom. Pas de regard. Rien que toi et tes mots.
               </p>
             </section>
 
@@ -49,23 +49,23 @@ export default function Confidentialite() {
                 Tes droits
               </h2>
               <ul className="space-y-2 text-text-muted">
-                <li>✓ Exporter toutes tes données en JSON en un clic</li>
-                <li>✓ Supprimer complètement toutes tes données</li>
-                <li>✓ Désactiver le système de détection bienveillante</li>
-                <li>✓ Accéder à cette politique en langage simple</li>
+                <li>✓ Reprendre tes mots en un clic — tout exporter, tout emporter</li>
+                <li>✓ Tout effacer, comme si tu n'étais jamais passé(e)</li>
+                <li>✓ Éteindre la détection bienveillante si tu préfères le silence</li>
+                <li>✓ Lire cette politique en langage humain, pas en jargon légal</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
-                Limites éthiques de Dalal
+                Limites éthiques de Dallaal
               </h2>
               <ul className="space-y-2 text-text-muted">
-                <li>• Dalal n'est pas un service médical — il ne remplace pas un professionnel</li>
-                <li>• Dalal ne diagnostique jamais une condition mentale</li>
-                <li>• Dalal n'intervient jamais automatiquement sans ton consentement</li>
-                <li>• Les articles et exercices sont validés par un psychologue sénégalais</li>
-                <li>• Les ressources de l'annuaire sont vérifiées régulièrement</li>
+                <li>• Dallaal accompagne — il ne soigne pas. Un professionnel reste irremplaçable.</li>
+                <li>• Dallaal ne pose jamais de diagnostic. Ce n'est pas son rôle.</li>
+                <li>• Dallaal ne fait rien sans ton accord. Ton consentement est sacré.</li>
+                <li>• Nos exercices et articles ont été relus par un psychologue sénégalais.</li>
+                <li>• L'annuaire est vérifié régulièrement — pour que tu trouves une vraie aide.</li>
               </ul>
             </section>
 
@@ -74,7 +74,7 @@ export default function Confidentialite() {
                 Questions?
               </h2>
               <p className="text-text-muted mb-4">
-                Si tu as des questions sur ta confidentialité ou comment Dalal fonctionne, n'hésite pas à nous contacter.
+                Une question sur comment tes données sont protégées? Une chose qui n'est pas claire? On est là.
               </p>
               <a href="mailto:contact@dalal.app">
                 <Button className="dalal-button-primary">

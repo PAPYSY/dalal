@@ -50,3 +50,18 @@ export const reports = pgTable("reports", {
 
 export type Report = typeof reports.$inferSelect;
 export type InsertReport = typeof reports.$inferInsert;
+
+/**
+ * Chat pair-aidant — messages éphémères par salon
+ * Messages expirent après 24h (filtrés à la requête)
+ */
+export const chatMessages = pgTable('chat_messages', {
+  id: serial('id').primaryKey(),
+  roomId: varchar('roomId', { length: 50 }).notNull(),
+  pseudonym: varchar('pseudonym', { length: 100 }).notNull(),
+  content: text('content').notNull(),
+  createdAt: timestamp('createdAt').defaultNow().notNull(),
+});
+
+export type ChatMessage = typeof chatMessages.$inferSelect;
+export type InsertChatMessage = typeof chatMessages.$inferInsert;

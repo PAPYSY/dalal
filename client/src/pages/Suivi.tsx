@@ -234,7 +234,7 @@ export default function Suivi() {
             <div className="text-center py-6">
               <Heart className="w-8 h-8 text-text-muted/30 mx-auto mb-2" />
               <p className="text-text-muted text-sm">
-                Tes activités apparaîtront ici au fur et à mesure que tu utilises Dalal.
+                Chaque geste compte. Reviens quand tu veux — tes pas s'accumuleront ici, doucement.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-4">
                 <Link href="/exercices">

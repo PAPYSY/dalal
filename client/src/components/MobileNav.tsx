@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from 'wouter';
-import { Menu, X, Heart, Wind, Palette, BookOpen, Users, AlertCircle, BarChart3, Compass, Phone, Home } from 'lucide-react';
+import { Menu, X, Heart, Wind, Palette, BookOpen, Users, AlertCircle, BarChart3, Compass, Phone, Home, Bot, MessagesSquare } from 'lucide-react';
 import Logo from './Logo';
 
 const NAV_ITEMS = [
@@ -14,6 +14,8 @@ const NAV_ITEMS = [
   { href: '/annuaire', label: 'Annuaire', icon: Phone },
   { href: '/communaute', label: 'Communauté', icon: Users },
   { href: '/suivi', label: 'Mon Suivi', icon: BarChart3 },
+  { href: '/ecoute-ia', label: 'Compagnon IA', icon: Bot },
+  { href: '/chat', label: 'Chat pair-aidant', icon: MessagesSquare },
   { href: '/urgence', label: 'Urgence', icon: AlertCircle, urgent: true },
 ];
 
@@ -143,7 +145,7 @@ export default function MobileNav() {
           borderTop: '1px solid rgba(255,255,255,0.1)',
         }}>
           <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', textAlign: 'center' }}>
-            Dalal — Calme-toi. Tu es en sécurité.
+            Dallaal — Calme-toi. Tu es en sécurité.
           </p>
         </div>
       </div>

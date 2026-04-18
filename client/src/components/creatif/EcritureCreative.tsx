@@ -74,7 +74,7 @@ export default function EcritureCreative() {
   };
 
   const exportTxt = () => {
-    const content = `Prompt: ${currentPrompt}\n\n${text}\n\n---\nÉcrit sur Dalal le ${new Date().toLocaleDateString('fr-FR')}`;
+    const content = `Prompt: ${currentPrompt}\n\n${text}\n\n---\nÉcrit sur Dallaal le ${new Date().toLocaleDateString('fr-FR')}`;
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
     const link = document.createElement('a');
     link.download = `dalal-ecriture-${Date.now()}.txt`;

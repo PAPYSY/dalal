@@ -135,7 +135,7 @@ export default function MosaiqueEmotions() {
     ctx.fillText(`Bilan: ${bilan.posCount} positives, ${bilan.negCount} négatives sur ${bilan.total} émotions`, 400, 830);
     ctx.font = 'italic 14px serif';
     ctx.fillStyle = '#6B6B6B';
-    ctx.fillText('Créé sur Dalal — Calme-toi. Tu es en sécurité.', 400, 860);
+    ctx.fillText('Créé sur Dallaal — Calme-toi. Tu es en sécurité.', 400, 860);
 
     const link = document.createElement('a');
     link.download = `dalal-mosaique-${Date.now()}.png`;

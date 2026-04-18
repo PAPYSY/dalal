@@ -1,8 +1,8 @@
 import { neon } from "@neondatabase/serverless";
 import { drizzle, type NeonHttpDatabase } from "drizzle-orm/neon-http";
 import { eq, and, gte, desc, sql } from "drizzle-orm";
-import { users, communityPosts, reports } from "../drizzle/schema";
-import type { InsertUser, InsertCommunityPost, InsertReport } from "../drizzle/schema";
+import { users, communityPosts, reports, chatMessages } from "../drizzle/schema";
+import type { InsertUser, InsertCommunityPost, InsertReport, InsertChatMessage } from "../drizzle/schema";
 import { ENV } from "./_core/env";
 
 let _db: NeonHttpDatabase | null = null;
@@ -117,6 +117,28 @@ export async function addRelate(postId: number) {
     .set({ relateCount: sql`${communityPosts.relateCount} + 1` })
     .where(eq(communityPosts.id, postId));
 }
+
+// ==================== CHAT PAIR-AIDANT ====================
+
+export async function getChatMessages(roomId: string) {
+  const db = getDb();
+  if (!db) return [];
+  const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
+  return db
+    .select()
+    .from(chatMessages)
+    .where(and(eq(chatMessages.roomId, roomId), gte(chatMessages.createdAt, since)))
+    .orderBy(chatMessages.createdAt)
+    .limit(100);
+}
+
+export async function sendChatMessage(msg: InsertChatMessage) {
+  const db = getDb();
+  if (!db) throw new Error('Database not available');
+  await db.insert(chatMessages).values(msg);
+}
+
+// ==================== REPORTS ====================
 
 export async function reportPost(report: InsertReport) {
   const db = getDb();

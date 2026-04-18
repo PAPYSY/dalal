@@ -45,10 +45,10 @@ export default function WelcomeModal() {
             <Heart className="w-8 h-8 text-green-deep" />
           </div>
           <h2 className="text-2xl font-bold text-text-main mb-2" style={{ fontFamily: "'Lora', serif" }}>
-            Bienvenue sur Dalal
+            Bienvenue sur Dallaal
           </h2>
           <p className="text-sm text-text-muted italic" style={{ fontFamily: "'Lora', serif" }}>
-            "Dalal" signifie "accueil" en wolof
+            "Dallaal" signifie "calme-toi" en wolof
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function WelcomeModal() {
             </div>
             <div>
               <p className="text-sm font-semibold text-text-main">Anonymat total</p>
-              <p className="text-xs text-text-muted">Aucun compte requis. Tes données restent sur ton appareil.</p>
+              <p className="text-xs text-text-muted">Ici, tu n'existes que pour toi. Aucune trace, aucun compte, aucun regard.</p>
             </div>
           </div>
 
@@ -69,7 +69,7 @@ export default function WelcomeModal() {
             </div>
             <div>
               <p className="text-sm font-semibold text-text-main">Sans jugement</p>
-              <p className="text-xs text-text-muted">Cet espace est bienveillant. Exprime-toi librement.</p>
+              <p className="text-xs text-text-muted">Ce que tu ressens est vrai. Même si tu ne trouves pas les mots. Même si ça ne fait pas sens.</p>
             </div>
           </div>
 
@@ -78,8 +78,8 @@ export default function WelcomeModal() {
               <Globe className="w-4 h-4 text-cream-gold" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-text-main">Culturellement adapté</p>
-              <p className="text-xs text-text-muted">Conçu pour la jeunesse sénégalaise et ouest-africaine.</p>
+              <p className="text-sm font-semibold text-text-main">Né d'ici</p>
+              <p className="text-xs text-text-muted">Fait pour toi, par des gens qui comprennent d'où tu viens et ce que tu portes.</p>
             </div>
           </div>
         </div>

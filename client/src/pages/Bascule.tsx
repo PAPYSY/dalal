@@ -79,10 +79,10 @@ export default function Bascule() {
             <Heart className="w-8 h-8" style={{ color: '#8B6BAE' }} />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-text-main mb-3" style={{ fontFamily: "'Lora', serif" }}>
-            Dalal est là pour toi
+            Dallaal est là pour toi
           </h1>
           <p className="text-lg text-text-muted">
-            Ce que tu ressens est important. Tu mérites de l'aide.
+            Ce que tu portes est réel. Et tu n'as pas à le porter seul(e).
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function Bascule() {
             </div>
             <div>
               <h3 className="font-bold text-text-main">Je veux me calmer maintenant</h3>
-              <p className="text-sm text-text-muted">Exercices de respiration et d'ancrage pour retrouver le calme</p>
+              <p className="text-sm text-text-muted">Quand les mots ne suffisent pas, le souffle prend le relais. Reviens en toi.</p>
             </div>
           </button>
 
@@ -110,7 +110,7 @@ export default function Bascule() {
               </div>
               <div>
                 <h3 className="font-bold text-text-main">Je veux parler à quelqu'un</h3>
-                <p className="text-sm text-text-muted">Envoie un message à une personne de confiance</p>
+                <p className="text-sm text-text-muted">Parfois un seul message suffit à rompre le silence. Quelqu'un t'attend.</p>
               </div>
             </div>
 
@@ -162,7 +162,7 @@ export default function Bascule() {
             </div>
             <div>
               <h3 className="font-bold text-text-main">Je veux parler à un professionnel</h3>
-              <p className="text-sm text-text-muted">Numéros d'urgence et ressources professionnelles</p>
+              <p className="text-sm text-text-muted">Des gens formés pour écouter sans juger. Tu mérites cette aide — elle est là.</p>
             </div>
           </button>
         </div>
@@ -225,7 +225,7 @@ export default function Bascule() {
 
         {/* Reminder */}
         <div className="text-center text-sm text-text-muted">
-          <p>Rappelle-toi: demander de l'aide est un acte de courage, pas de faiblesse.</p>
+          <p>Tendre la main ne diminue pas — ça libère. Ce geste est le plus courageux qui soit.</p>
         </div>
       </div>
 

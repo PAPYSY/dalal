@@ -19,6 +19,8 @@ import CasDeVie from "./pages/CasDeVie";
 import Communaute from "./pages/Communaute";
 import Suivi from "./pages/Suivi";
 import Bascule from "./pages/Bascule";
+import EcouteIA from "./pages/EcouteIA";
+import Chat from "./pages/Chat";
 import { useLocation } from "wouter";
 
 function Router() {
@@ -51,6 +53,8 @@ function Router() {
           <Route path={"/nous"} component={Communaute} />
           <Route path={"/suivi"} component={Suivi} />
           <Route path={"/basculer"} component={Bascule} />
+          <Route path={"/ecoute-ia"} component={EcouteIA} />
+          <Route path={"/chat"} component={Chat} />
           <Route path={"/urgence"} component={Urgence} />
           <Route path={"/confidentialite"} component={Confidentialite} />
           <Route path={"/404"} component={NotFound} />

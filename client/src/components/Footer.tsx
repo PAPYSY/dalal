@@ -37,6 +37,8 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-text-main mb-4">Aide</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/ecoute-ia" className="text-text-muted hover:text-green-deep">Compagnon IA</Link></li>
+              <li><Link href="/chat" className="text-text-muted hover:text-green-deep">Chat pair-aidant</Link></li>
               <li><Link href="/urgence" className="text-text-muted hover:text-green-deep">Urgence</Link></li>
               <li><Link href="/basculer" className="text-text-muted hover:text-green-deep">Obtenir de l'aide</Link></li>
               <li><Link href="/confidentialite" className="text-text-muted hover:text-green-deep">Confidentialité</Link></li>
@@ -45,7 +47,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-green-light/20 pt-8 text-center text-text-muted text-sm">
           <p>
-            Dalal © 2026 by{' '}
+            Dallaal © 2026 by{' '}
             <a
               href="https://niaare-app.com"
               target="_blank"

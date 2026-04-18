@@ -54,7 +54,7 @@ Selon l'OMS, la dépression touche plus de 280 millions de personnes dans le mon
 1. Reconnaître que ce que tu ressens est réel et valide
 2. En parler à quelqu'un de confiance
 3. Consulter un professionnel si possible
-4. Utiliser les exercices de Dalal comme complément (pas remplacement) d'un suivi professionnel
+4. Utiliser les exercices de Dallaal comme complément (pas remplacement) d'un suivi professionnel
 
 Tu n'es pas faible. Tu es humain(e). Et demander de l'aide est un acte de courage.`,
   },

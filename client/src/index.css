@@ -43,7 +43,7 @@
 }
 
 :root {
-  /* Dalal Color Palette - Minimalisme Organique Africain */
+  /* Dallaal Color Palette - Minimalisme Organique Africain */
   --color-bg-main: #F8F6F2;
   --color-bg-card: #E8E0D0;
   --color-green-light: #B8CBBF;
@@ -141,7 +141,7 @@
     @apply cursor-pointer;
   }
 
-  /* Dalal Custom Color Classes */
+  /* Dallaal Custom Color Classes */
   .text-text-main {
     color: var(--color-text-main);
   }
@@ -240,7 +240,7 @@
     }
   }
 
-  /* Dalal Custom Components */
+  /* Dallaal Custom Components */
   .dalal-card {
     @apply rounded-3xl;
     background-color: var(--color-bg-card);

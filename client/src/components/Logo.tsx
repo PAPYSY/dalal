@@ -1,5 +1,5 @@
 /**
- * Logo Component - Dalal
+ * Logo Component - Dallaal
  * 
  * Design Philosophy: Minimalisme Organique Africain
  * - Ligne ondulante unique symbolisant la respiration
@@ -49,7 +49,7 @@ export default function Logo({ size = 'md', animated = true }: LogoProps) {
 
       <div className="flex flex-col">
         <span className={`font-bold text-green-deep ${textSizeClasses[size]}`} style={{ fontFamily: "'Lora', serif" }}>
-          DALAL
+          DALLAAL
         </span>
         {size !== 'sm' && (
           <span className="text-xs text-text-muted" style={{ fontFamily: "'Source Sans 3', sans-serif" }}>
