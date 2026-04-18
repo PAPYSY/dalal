@@ -37,15 +37,19 @@ queryClient.getMutationCache().subscribe(event => {
   }
 });
 
+// En app native Capacitor, l'URL relative ne fonctionne pas — on pointe vers la prod
+const isNative = typeof (window as any).Capacitor !== 'undefined' && (window as any).Capacitor.isNativePlatform?.();
+const API_BASE = isNative ? 'https://dalal-psi.vercel.app' : '';
+
 const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
-      url: "/api/trpc",
+      url: `${API_BASE}/api/trpc`,
       transformer: superjson,
       fetch(input, init) {
         return globalThis.fetch(input, {
           ...(init ?? {}),
-          credentials: "include",
+          credentials: isNative ? 'omit' : 'include',
         });
       },
     }),

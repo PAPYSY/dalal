@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dallaal</string>
+    <string name="title_activity_main">Dallaal</string>
+    <string name="package_name">com.dallaal.app</string>
+    <string name="custom_url_scheme">com.dallaal.app</string>
+</resources>
