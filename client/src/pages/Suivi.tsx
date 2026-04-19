@@ -21,11 +21,11 @@ interface ActivityLog {
 }
 
 const MOOD_LEVELS = [
-  { value: 1, emoji: '😢', label: 'Très mal', color: '#C4B8D4' },
-  { value: 2, emoji: '😔', label: 'Pas bien', color: '#C5D5E8' },
-  { value: 3, emoji: '😐', label: 'Neutre', color: '#D4B896' },
-  { value: 4, emoji: '🙂', label: 'Bien', color: '#B8CBBF' },
-  { value: 5, emoji: '😊', label: 'Très bien', color: '#4A7C6F' },
+  { value: 1, emoji: '🤢', label: 'Dégoût',   color: '#A8B89A' },
+  { value: 2, emoji: '😢', label: 'Tristesse', color: '#C5D5E8' },
+  { value: 3, emoji: '😨', label: 'Peur',      color: '#C4B8D4' },
+  { value: 4, emoji: '😠', label: 'Colère',    color: '#E8C5C5' },
+  { value: 5, emoji: '😊', label: 'Joie',      color: '#4A7C6F' },
 ];
 
 function getStoredMoods(): MoodEntry[] {
@@ -151,7 +151,7 @@ export default function Suivi() {
         {/* Today's Mood */}
         <div className="dalal-card p-6 mb-6">
           <h2 className="text-xl font-bold text-text-main mb-4" style={{ fontFamily: "'Lora', serif" }}>
-            Comment te sens-tu aujourd'hui?
+            Quelle émotion ressens-tu aujourd'hui ?
           </h2>
           <div className="flex justify-center gap-4 mb-4">
             {MOOD_LEVELS.map(level => (
@@ -190,7 +190,7 @@ export default function Suivi() {
           <div className="dalal-card p-4 text-center">
             <TrendingUp className="w-6 h-6 mx-auto mb-2 text-green-deep" />
             <div className="text-2xl font-bold text-text-main">{avgMood || '-'}</div>
-            <div className="text-xs text-text-muted">humeur moyenne</div>
+            <div className="text-xs text-text-muted">score moyen</div>
           </div>
           <div className="dalal-card p-4 text-center">
             <Calendar className="w-6 h-6 mx-auto mb-2 text-blue-slate" />

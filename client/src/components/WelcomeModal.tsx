@@ -3,24 +3,14 @@
  * Affiché une seule fois, stocké dans localStorage
  */
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { X, Heart, Shield, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function WelcomeModal() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const hasVisited = localStorage.getItem('dalal_visited');
-    if (!hasVisited) {
-      // Small delay for smoother experience
-      const timer = setTimeout(() => setIsOpen(true), 800);
-      return () => clearTimeout(timer);
-    }
-  }, []);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
-    localStorage.setItem('dalal_visited', 'true');
     setIsOpen(false);
   };
 
